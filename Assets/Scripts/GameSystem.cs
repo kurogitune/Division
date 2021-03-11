@@ -15,7 +15,7 @@ public class GameSystem : MonoBehaviour
     public AudioSource BGMPlayer;
     public AudioSource SEPLayer;
     bool SeenChangeStart;//シーン切り替え開始か
-    public FadeSystem FadeSy;//フェードシステム
+    FadeSystem FadeSy;//フェードシステム
     // Start is called before the first frame update
     void Start()
     {

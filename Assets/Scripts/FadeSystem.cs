@@ -35,7 +35,6 @@ using UnityEngine;
     void Update()
      {
         if (!FadeStart) return;
-
         Cunt++;
         if (Cunt > MaxCount)
         {
@@ -48,15 +47,15 @@ using UnityEngine;
         else Destroy(INSpritList[Cunt - 1]);
     }
 
-    public void FadeIN()
+    public void FadeIN()//フェードイン
     {
         if (FadeStart) return;
-        INSpritList = new List<GameObject>(0);
+        INSpritList = new List<GameObject>(0);//リスト初期化
         for (int i = 0; i < LoopCount; i++)
         {
-            float X = Random.Range(Min_X, Max_X + 1);
-            float Y = Random.Range(Min_Y, Max_Y + 1);
-            int ImagNo = Random.Range(0, Sprits.Length);
+            float X = Random.Range(Min_X, Max_X + 1);//座標X
+            float Y = Random.Range(Min_Y, Max_Y + 1);//座標Y
+            int ImagNo = Random.Range(0, Sprits.Length);//画像番号
             GameObject Obj = Instantiate(SetObj);
             Obj.GetComponent<SpriteRenderer>().sprite = Sprits[ImagNo];
             Obj.transform.position = new Vector3(X, Y, 0);
@@ -69,7 +68,7 @@ using UnityEngine;
         MaxCount = INSpritList.Count;
     }
 
-    public void FadeOUT()
+    public void FadeOUT()//フェードアウト
     {
         if (FadeStart || INSpritList.Count == 0) return;
         FameEndSprit.SetActive(false);

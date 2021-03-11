@@ -13,7 +13,7 @@ public class TitleSystem : MonoBehaviour
     public AudioSource BGMPlayer;//BGM再生機
     public AudioSource SEPLayer;//SE再生機
     public GameObject PlayerObj;//プレイヤーオブジェクト
-    public FadeSystem FadeSy;//フェードシステム
+    FadeSystem FadeSy;//フェードシステム
     [Header("プレイヤーが落ちる速度")]
     public float PlayerDownSpeed;
     bool Seenchange,Fade;
@@ -41,7 +41,6 @@ public class TitleSystem : MonoBehaviour
             Fade = true;
             FadeSy.FadeIN();
         }
-
     }
 
     void SeenChang()
